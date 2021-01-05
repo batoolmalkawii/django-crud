@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block main %}
+  <h2> Blog App </h2>
+  <h3>Title:  {{ post.title }}</h3>
+  <h3>Author:  {{ post.author }}</h3>
+  <h3>Body: {{ post.body }}</h3>
+  <a href="{% url 'post_delete' post.pk %}">Delete Post</a>
+  <a href="{% url 'post_update' post.pk %}">Edit Post</a>
+{% endblock main%}

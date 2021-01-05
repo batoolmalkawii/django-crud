@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block main %}
+  <h2> Blog App</h2>
+  <h3>List of Posts</h3>
+  <ul>
+    {% for post in object_list %}
+      <li>
+        <a href="{% url 'post_details' post.pk %}">{{ post.title }}</a>
+        <a href="{% url 'post_delete' post.pk %}">Delete</a>
+        <a href="{% url 'post_update' post.pk %}">Update</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock main%}
